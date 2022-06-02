@@ -4,9 +4,13 @@ import Logo from "../assets/svg/Logo.svg";
 
 export default function Navbar() {
 	return (
-		<div className="flex bg-neutral-800 text-white">
-			<img src={Logo} alt="grocery store logo" />
-			<Navlinks />
+		<div className="flex flex-row bg-black">
+			<div className="bg-red-700">
+				<img className="" src={Logo} alt="Guitar Store logo" />
+			</div>
+			<div className="flex justify-end bg-yellow-300 mx-auto text-white">
+				<Navlinks />
+			</div>
 		</div>
 	);
 }

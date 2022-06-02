@@ -6,6 +6,7 @@ export default function Navlinks() {
     <>
         <NavLink to={"/"}>Home</NavLink>
         <NavLink to={"/login"}>Login</NavLink>
+        <NavLink to={"/cart"}>Cart</NavLink>
     </>
     );
 }
