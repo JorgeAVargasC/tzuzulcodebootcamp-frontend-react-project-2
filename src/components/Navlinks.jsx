@@ -15,6 +15,7 @@ export default function Navlinks() {
                     
                     <li><NavLink to={"/login"}>Login</NavLink></li>
                     <li><NavLink to={"/signup"}>Sign Up</NavLink></li>
+                    <li><NavLink to={"/cart"}>Cart</NavLink></li>
                 </>:
                 <>
                     <li className="text-white">{user.name}</li>
