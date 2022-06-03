@@ -44,7 +44,7 @@ export default function Login() {
 		<>
 			
 			<form
-				className="p-5 w-1/2 mx-auto my-10 flex flex-col gap-5 shadow-md border rounded text-black"
+				className="bg-zinc-800 border-zinc-600 p-5 w-1/2 mx-auto my-10 flex flex-col gap-5 shadow-md border rounded text-black"
 				onSubmit={login}
 			>
 				<input className="p-2 shadow-md" type="email" name="email" />
