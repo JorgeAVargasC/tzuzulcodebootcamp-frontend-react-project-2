@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { get } from "../api";
 import {authContext} from "../context/Auth";
 
-export default function Navlinks() {
+export default function NavLinks() {
 
 	const { user, logged, setUser } = useContext(authContext);
     const navigate = useNavigate();

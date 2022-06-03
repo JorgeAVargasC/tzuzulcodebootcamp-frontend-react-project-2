@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { useContext } from "react";
-import { authContext } from "../context/AuthContext";
 import { Spin as Hamburger } from "hamburger-react";
 import Logo from "../assets/svg/Logo.svg";
-import NavLinks from "./NavLinks";
 import { NavLink } from "react-router-dom";
-import Navlinks from "./NavLinks";
+import NavLinks from "./NavLinks";
 
 export default function Navbar() {
 
@@ -17,6 +14,7 @@ export default function Navbar() {
 				<div className="flex justify-between">
 					<div className="flex space-x-7 my-5">
 						<div>
+							
 							<NavLink to="/home">
 								<img classNameName="" src={Logo} alt="Guitar Store logo" />
 							</NavLink>
