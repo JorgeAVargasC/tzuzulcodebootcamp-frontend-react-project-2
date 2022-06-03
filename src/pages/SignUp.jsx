@@ -43,7 +43,7 @@ export default function SignUp() {
 		<>
 			
 			<form
-				className="my-10 bg-zinc-800 border-zinc-600 p-5 w-1/2 mx-auto flex flex-col gap-5 shadow-md border rounded"
+				className="my-10 bg-zinc-800 border-zinc-600 p-5 w-1/2 mx-auto flex flex-col gap-5 shadow-md border rounded text-black"
 				onSubmit={signup}
 			>
                 <input className="p-2 shadow-md" type="text" name="name" />
