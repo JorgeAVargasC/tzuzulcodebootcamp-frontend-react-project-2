@@ -34,7 +34,7 @@ export default function SignUp() {
 			.catch((error) => {
 				setErrors({
 					isErrors: true,
-					errors: error.errors,
+					errors: error.errors.map(e=>e.message),
 				});
 			});
 	};
