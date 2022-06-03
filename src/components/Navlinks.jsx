@@ -1,10 +1,23 @@
 import React, {useContext} from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { get } from "../api";
 import {authContext} from "../context/Auth";
 
 export default function Navlinks() {
 
-	const { user, logged } = useContext(authContext);
+	const { user, logged, setUser } = useContext(authContext);
+    const navigate = useNavigate();
+
+    const logout = () => {
+        get("/api/auth/logout")
+        .then(result => {
+            setUser({
+                logged: false,
+                user: {}
+            })
+            navigate("/");
+        })
+    }
 
 	return (
 		<nav>
@@ -19,6 +32,7 @@ export default function Navlinks() {
                 </>:
                 <>
                     <li className="text-white">{user.name}</li>
+                    <li><button onClick={logout}>Log Out</button></li>
                 </>}
                 
             </ul>			
