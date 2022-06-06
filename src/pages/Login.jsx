@@ -45,8 +45,8 @@ export default function Login() {
 				className="bg-zinc-800 border-zinc-600 p-5 w-1/2 mx-auto my-10 flex flex-col gap-5 shadow-md border rounded text-black"
 				onSubmit={login}
 			>
-				<input className="p-2 shadow-md" type="email" name="email" />
-				<input className="p-2 shadow-md" type="password" name="password" />
+				<input className="p-2 shadow-md" type="email" name="email" placeholder="jhon-doe@gs.com"/>
+				<input className="p-2 shadow-md" type="password" name="password" placeholder="password"/>
 				<button className="bg-orange-600 text-white p-2">Iniciar sesión</button>
 			</form>
 

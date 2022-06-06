@@ -45,9 +45,9 @@ export default function SignUp() {
 				className="my-10 bg-zinc-800 border-zinc-600 p-5 w-1/2 mx-auto flex flex-col gap-5 shadow-md border rounded text-black"
 				onSubmit={signup}
 			>
-				<input className="p-2 shadow-md" type="text" name="name" />
-				<input className="p-2 shadow-md" type="email" name="email" />
-				<input className="p-2 shadow-md" type="password" name="password" />
+				<input className="p-2 shadow-md" type="text" name="name" placeholder="Jhon Doe"/>
+				<input className="p-2 shadow-md" type="email" name="email" placeholder="jhon-doe@gs.com"/>
+				<input className="p-2 shadow-md" type="password" name="password" placeholder="Password"/>
 				<button className="bg-orange-600 text-white p-2">Sign Up</button>
 			</form>
 
