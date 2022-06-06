@@ -29,7 +29,7 @@ export default function App() {
 	}, [setUser]);
 
 	return (
-		<div className="selection:bg-orange-400 selection:text-white">
+		<div className="selection:bg-orange-400 selection:text-white bg-slate-900 min-h-screen text-white">
 			<Navbar />
 			<Routes>
 				<Route path="/" element={<Home />} />
