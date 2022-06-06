@@ -2,15 +2,15 @@ import React, { useState, useContext } from "react";
 import { post } from "../api";
 import Errors from "../components/Errors";
 import { FcGoogle } from "react-icons/fc";
+import { FaFacebookSquare } from "react-icons/fa";
 import { authContext } from "../context/Auth";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+	const { setUser } = useContext(authContext);
 
-	const {setUser} = useContext(authContext);
+	const navigate = useNavigate();
 
-	const navigate = useNavigate()
-	
 	const [errors, setErrors] = useState({
 		isErrors: false,
 		errors: [],
@@ -24,25 +24,23 @@ export default function Login() {
 			email: email.value,
 			password: password.value,
 		})
-			.then(({user}) => {
-				
+			.then(({ user }) => {
 				setUser({
 					logged: true,
-					user
+					user,
 				});
-				navigate("/")
+				navigate("/");
 			})
 			.catch((error) => {
 				setErrors({
 					isErrors: true,
-					errors: error.errors.map(e=>e.message),
+					errors: error.errors.map((e) => e.message),
 				});
 			});
 	};
 
 	return (
 		<>
-			
 			<form
 				className="bg-zinc-800 border-zinc-600 p-5 w-1/2 mx-auto my-10 flex flex-col gap-5 shadow-md border rounded text-black"
 				onSubmit={login}
@@ -56,9 +54,15 @@ export default function Login() {
 				className="flex items-center gap-3 bg-zinc-800 rounded text-white w-max mx-auto p-3 my-10 shadow-md"
 				href="https://backendnodejstzuzulcode.uw.r.appspot.com/api/auth/google"
 			>
-				<FcGoogle /> Iniciar sesión con Google
+				<FcGoogle /> Google Login
 			</a>
-			
+			<a
+				className="flex items-center gap-3 bg-zinc-800 w-max mx-auto p-3 my-10 shadow-md"
+				href="https://backendnodejstzuzulcode.uw.r.appspot.com/api/auth/facebook"
+			>
+				<FaFacebookSquare /> Facebook Login
+			</a>
+
 			<Errors errors={errors} />
 		</>
 	);
