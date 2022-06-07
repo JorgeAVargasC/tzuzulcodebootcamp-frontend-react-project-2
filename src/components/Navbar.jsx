@@ -16,6 +16,8 @@ export default function Navbar() {
 				<NavLinks />
 			</div>
 		</div>
+
+
 		// <div className="content-center">
 		// 	<div className="max-w-6xl mx-auto px-4">
 		// 		<div className="flex justify-between">
