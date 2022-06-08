@@ -7,37 +7,36 @@ import { authContext } from "../context/Auth";
 import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
-	const { setUser } = useContext(authContext);
-	const navigate = useNavigate();
+	
+	const {setUser} = useContext(authContext)
+    const navigate = useNavigate()
 
-	const [errors, setErrors] = useState({
-		isErrors: false,
-		errors: [],
-	});
+    const [errors,setErrors] = useState({
+        isErrors:false,
+        errors:[]
+    })
 
-	const signup = (event) => {
-		event.preventDefault();
-		const { name, email, password } = event.target;
+    const signup = (event)=>{
+        event.preventDefault()
+        const {email,password,name} = event.target
 
-		post("/api/auth/signup", {
-			name: name.value,
-			email: email.value,
-			password: password.value,
-		})
-			.then(({ user }) => {
-				setUser({
-					logged: true,
-					user,
-				});
-				navigate("/");
-			})
-			.catch((error) => {
-				setErrors({
-					isErrors: true,
-					errors: error.errors.map((e) => e.message),
-				});
-			});
-	};
+        post("/api/auth/signup",{
+            email:email.value,
+            password:password.value,
+            name:name.value
+        }).then(({user})=>{
+            setUser({type:'SIGNUP',payload:user})
+            navigate("/")
+        })
+        .catch(error=>{
+            console.log(error)
+            setErrors({
+                isErrors:true,
+                errors:error.errors.map(e=>e.message)
+            })
+        })
+
+    }
 
 	return (
 		<>
