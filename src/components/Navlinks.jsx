@@ -20,10 +20,7 @@ export default function NavLinks() {
     const logout = () => {
         get("/api/auth/logout")
         .then(result => {
-            setUser({
-                logged: false,
-                user: {}
-            })
+            setUser({type:'LOGOUT'});
             navigate("/");
         })
     }
